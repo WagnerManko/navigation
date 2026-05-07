@@ -1,9 +1,10 @@
 import { ButtonIcon } from "@/components/ButtonIcon";
 import { Header } from "@/components/Header";
 import { Title } from "@/components/Title";
+import { StackRoutesProps } from "@/types/navigation";
 import { View } from "react-native";
 
-export function Home() {
+export function Home({ navigation }: StackRoutesProps<"home">) {
   return (
     <View
       style={{
@@ -14,7 +15,10 @@ export function Home() {
     >
       <Header>
         <Title>Home</Title>
-        <ButtonIcon name="add-circle" />
+        <ButtonIcon
+          name="add-circle"
+          onPress={() => navigation.navigate("product")}
+        />
       </Header>
     </View>
   );
