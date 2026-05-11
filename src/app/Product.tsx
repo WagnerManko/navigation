@@ -1,10 +1,13 @@
 import { ButtonIcon } from "@/components/ButtonIcon";
 import { Header } from "@/components/Header";
 import { Title } from "@/components/Title";
-import { StackRoutesProps } from "@/types/navigation";
+import { BottomTabRoutesProps, StackRoutesProps } from "@/types/navigation";
 import { View } from "react-native";
 
-export function Product({ navigation, route }: StackRoutesProps<"product">) {
+export function Product({
+  navigation,
+  route,
+}: StackRoutesProps<"product"> | BottomTabRoutesProps<"product">) {
   return (
     <View
       style={{

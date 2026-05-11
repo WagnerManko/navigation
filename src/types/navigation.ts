@@ -1,7 +1,8 @@
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
+import { BottomTabScreenProps } from "@react-navigation/bottom-tabs";
 
 /* eslint-disable @typescript-eslint/no-empty-object-type */
-export type RootStackParamList = {
+export type RouteList = {
   home: undefined;
   product:
     | undefined
@@ -12,9 +13,12 @@ export type RootStackParamList = {
 
 declare global {
   namespace ReactNavigation {
-    interface RootParamList extends RootStackParamList {}
+    interface RootParamList extends RouteList {}
   }
 }
 
-export type StackRoutesProps<T extends keyof RootStackParamList> =
-  NativeStackScreenProps<RootStackParamList, T>;
+export type StackRoutesProps<T extends keyof RouteList> =
+  NativeStackScreenProps<RouteList, T>;
+
+export type BottomTabRoutesProps<T extends keyof RouteList> =
+  BottomTabScreenProps<RouteList, T>;

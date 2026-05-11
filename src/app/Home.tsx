@@ -1,10 +1,12 @@
 import { ButtonIcon } from "@/components/ButtonIcon";
 import { Header } from "@/components/Header";
 import { Title } from "@/components/Title";
-import { StackRoutesProps } from "@/types/navigation";
+import { BottomTabRoutesProps, StackRoutesProps } from "@/types/navigation";
 import { View } from "react-native";
 
-export function Home({ navigation }: StackRoutesProps<"home">) {
+export function Home({
+  navigation,
+}: StackRoutesProps<"product"> | BottomTabRoutesProps<"home">) {
   return (
     <View
       style={{
