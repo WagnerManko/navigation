@@ -1,5 +1,6 @@
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { BottomTabScreenProps } from "@react-navigation/bottom-tabs";
+import { DrawerScreenProps } from "@react-navigation/drawer";
 
 /* eslint-disable @typescript-eslint/no-empty-object-type */
 export type RouteList = {
@@ -22,3 +23,8 @@ export type StackRoutesProps<T extends keyof RouteList> =
 
 export type BottomTabRoutesProps<T extends keyof RouteList> =
   BottomTabScreenProps<RouteList, T>;
+
+export type DrawerRoutesProps<T extends keyof RouteList> = DrawerScreenProps<
+  RouteList,
+  T
+>;

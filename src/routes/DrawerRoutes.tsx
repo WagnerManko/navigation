@@ -2,41 +2,40 @@ import { Home } from "@/app/Home";
 import { Product } from "@/app/Product";
 import { RouteList } from "@/types/navigation";
 import { MaterialIcons } from "@expo/vector-icons";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { createDrawerNavigator } from "@react-navigation/drawer";
 
-const BottomTab = createBottomTabNavigator<RouteList>();
+const Drawer = createDrawerNavigator<RouteList>();
 
-export function BottomRoutes() {
+export function DrawerRoutes() {
   return (
-    <BottomTab.Navigator
+    <Drawer.Navigator
       initialRouteName="home"
       screenOptions={{
         headerShown: false,
-        tabBarActiveTintColor: "#2c46b1",
-        tabBarInactiveTintColor: "#444",
-        tabBarLabelPosition: "beside-icon",
+        drawerActiveTintColor: "#2c46b1",
+        drawerInactiveTintColor: "#444",
       }}
     >
-      <BottomTab.Screen
+      <Drawer.Screen
         name="home"
         component={Home}
         options={{
-          tabBarLabel: "Início",
-          tabBarIcon: ({ color, size }) => (
+          drawerLabel: "Início",
+          drawerIcon: ({ color, size }) => (
             <MaterialIcons name="home" color={color} size={size} />
           ),
         }}
       />
-      <BottomTab.Screen
+      <Drawer.Screen
         name="product"
         component={Product}
         options={{
-          tabBarLabel: "Produtos",
-          tabBarIcon: ({ color, size }) => (
+          drawerLabel: "Produtos",
+          drawerIcon: ({ color, size }) => (
             <MaterialIcons name="add-circle" color={color} size={size} />
           ),
         }}
       />
-    </BottomTab.Navigator>
+    </Drawer.Navigator>
   );
 }
